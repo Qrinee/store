@@ -1,14 +1,15 @@
 .products{
     margin: 2vw;
     width: 100%;
-    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 0;
-    background-color: white;
 }
 
 @media only screen and (max-width: 960px) {
     .products{
         width: 100%;
         margin: 2vw;
+        justify-content: center;
     }
 }

@@ -1,9 +1,13 @@
 .navigation-button{
     width: 10rem;
     height: 100%;
-    display: grid;
+    display: flex;
+    justify-content: center;
     place-items: center;
     transition: 0.2s background-color;
+}
+.navigation-icon{
+    padding-right: 10px;
 }
 
 .bold{
