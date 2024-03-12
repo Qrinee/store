@@ -1,0 +1,20 @@
+@font-face { font-family: glacial; src: url('./assets/glacialbold.otf');}
+@font-face { font-family: proxima; src: url('./assets/proximaregular.otf');}
+@font-face { font-family: proximaBold; src: url('./assets/proximabold.otf');}
+@font-face { font-family: proximaSemiBold; src: url('./assets/proximasemibold.otf'); }
+
+body{ 
+    margin: 0;
+    font-family: proxima; 
+    background-color: rgb(245, 245, 245);
+}
+
+.main-container{
+    display: flex;
+}
+
+@media only screen and (max-width: 960px) {
+    .main-container{
+        flex-wrap: wrap;
+    }
+}

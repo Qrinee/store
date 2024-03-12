@@ -1,0 +1,11 @@
+.categories-header{
+    display: flex;
+    padding-left: 2vw;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.categories-header-text{
+    padding-left: 10px;
+}

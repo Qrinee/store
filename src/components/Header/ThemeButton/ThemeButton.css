@@ -1,0 +1,16 @@
+.theme-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-right: 2vw;
+}
+
+.theme-icon{
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
