@@ -1,5 +1,7 @@
+import { CartButton } from '../CartButton/CartButton';
 import { ProductScheme } from '../../../types'
 import './Product.css'
+import tab from '../../../assets/tab.png'
 
 export default function Product({title, price, description, images}:ProductScheme) {
   return (
@@ -16,7 +18,10 @@ export default function Product({title, price, description, images}:ProductSchem
         <div className='description'>{description.slice(0, 65).trimEnd()}...</div>
         <div className='product-bottom'>
           <div className='price'>{price}$</div>
-          <div className='button-buy'>Add to cart</div>
+          <div className='button-container'>
+            <img className='tab-button' src={tab} width={20} />
+            <CartButton  />
+          </div>
         </div>
       </div>
     </div>
