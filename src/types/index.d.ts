@@ -1,5 +1,5 @@
 interface LogoProps {logo: string;}
-interface NavigationButtonProps { text: string; isBold?: boolean; image?: string; }
+interface NavigationButtonProps { text: string; isBold?: boolean; image?: string; number: number; }
 interface CategoriesProps { selected? : boolean; text: string}
 
 interface ProductScheme {
@@ -8,6 +8,11 @@ interface ProductScheme {
     price: number,
     description: string,
     images: any
+}
+
+interface CartItem {
+    id: number;
+    quantity: number;
 }
 
 interface CategoryScheme{
@@ -19,4 +24,4 @@ interface CategoryScheme{
     selected?: boolean,
 }
 
-export {LogoProps, NavigationButtonProps, CategoriesProps, ProductScheme, CategoryScheme};
+export {LogoProps, NavigationButtonProps, CategoriesProps, ProductScheme, CategoryScheme, CartItem};

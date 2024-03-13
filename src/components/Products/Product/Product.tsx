@@ -3,7 +3,7 @@ import { ProductScheme } from '../../../types'
 import './Product.css'
 import tab from '../../../assets/tab.png'
 
-export default function Product({title, price, description, images}:ProductScheme) {
+export default function Product({title, price, description, images, id}:ProductScheme) {
   return (
     <div className='product'>
       <div className='image'>
@@ -20,7 +20,7 @@ export default function Product({title, price, description, images}:ProductSchem
           <div className='price'>{price}$</div>
           <div className='button-container'>
             <img className='tab-button' src={tab} width={20} />
-            <CartButton  />
+            <CartButton id={id} />
           </div>
         </div>
       </div>

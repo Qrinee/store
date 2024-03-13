@@ -8,7 +8,9 @@ export default function Home() {
         <Header />
         <main className="main-container">
             <Categories/>
-            <Products/>
+            <div>
+              <Products/>
+            </div>
         </main>
     </>
   )

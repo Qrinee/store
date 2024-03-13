@@ -10,6 +10,12 @@
     padding-right: 10px;
 }
 
+.selected-page{
+    transition: 0.05s all;
+    padding-bottom: 2px;
+    border-bottom: 2px solid rgba(24, 24, 24, 0.76);
+}
+
 .bold{
     font-family: proximaBold;
 }
