@@ -1,0 +1,26 @@
+.select-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.num{
+    padding: 10px;
+    min-width: 30px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+.minus:hover, .plus:hover{
+    background-color: rgb(29, 29, 29);
+}
+.minus, .plus{
+    border: 0;
+    width: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(14, 14, 14);
+    cursor: pointer;
+    height: 35px;
+}

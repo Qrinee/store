@@ -40,6 +40,11 @@ export function CartButton({ id }: { id: number }) {
         setShowPicker(false);
     };
 
+    const handleCart = () => {
+      setShowPicker(true)
+      handlePickerChange(1)
+    }
+
     return (
         <>
             {showPicker ? (
@@ -49,7 +54,7 @@ export function CartButton({ id }: { id: number }) {
                     <button className="plus" onClick={() => handlePickerChange(1)}>+</button>
                 </div>
             ) : (
-                <div className='button-buy' onClick={() => setShowPicker(true)}>Add to cart</div>
+                <div className='button-buy' onClick={() => handleCart()}>Add to cart</div>
             )}
         </>
     );

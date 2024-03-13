@@ -21,7 +21,6 @@ export default function Categories() {
     <div className='categories'>
       <CategoriesHeader/>
       <div className='categories-selector'>
-        <CategoriesItem id={2} name='All' image='' creationAt='' updatedAt=''  />
         {categories.map((category) => (
           <CategoriesItem key={category.id} {...category} />
         ))}

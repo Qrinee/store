@@ -8,6 +8,7 @@
 }
 .navigation-icon{
     padding-right: 10px;
+    
 }
 
 .selected-page{
@@ -31,4 +32,5 @@
         height: 100%;
         padding: 0;
     }
+
 }

@@ -1,0 +1,31 @@
+.product-view-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+    width: 100%;
+}
+
+.view-images img{
+    width: 100%;
+}
+.view-images{
+    width: calc(100px + 18vw);
+    height: calc(100px + 18vw);
+    overflow: hidden;
+}
+
+.view-text h1{
+    font-size: 40px;
+}
+
+.view-text{
+    width: calc(150px + 20vw);
+    margin-left: 2vw;
+}
+
+.product-view-image{
+    width: calc(150px + 20vw);
+}

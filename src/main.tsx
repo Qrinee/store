@@ -7,11 +7,16 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import { PageContextProvider } from './context/PageContext.tsx'
+import View from './pages/View.tsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Shop/>,
+  },
+  {
+    path: "/product",
+    element: <View/>
   }
 ])
 
