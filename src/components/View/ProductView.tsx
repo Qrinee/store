@@ -6,9 +6,11 @@ import { CartButton } from "../Products/CartButton/CartButton";
 
 export default function ProductView() {
     const [product, setProduct] = useState<ProductScheme | null>(null);
+    const [selected, setSelected] = useState<number>(0)
     const urlParams = new URLSearchParams(window.location.search);
     const idString = urlParams.get('id');
     const id = idString ? parseInt(idString) : null;
+
 
     useEffect(() => {
       if (id !== null) {
@@ -28,13 +30,20 @@ export default function ProductView() {
       {product && (
         <>
           <div className="view-images">
-            <img src={product.images} alt={product.title} className="product-view-image" />
+            <img src={product.images[selected]} alt={product.title} className="product-view-image" />
           </div>
           <div className="view-text">
             <h1>{product.title}</h1>
             <p>{product.description}</p>
+
+            <div className="view-mini-images">
+                {
+                    product && product.images.map((e:any, index:number) => (
+                        <img src={e} key={index} onClick={() => setSelected(index)}  alt={product.title} className={`product-view-image ${index == selected ? 'view-selected': ''}`} />
+                    ))
+                }
+            </div>
             {id !== null && <CartButton id={id} />}
-            <div></div>
           </div>
         </>
       )}

@@ -6,25 +6,9 @@ import { CategoryScheme } from '../../types'
 import { fetchCategories } from '../../services/api'
 
 export default function Categories() {
-  const [categories, setCategories] = useState<CategoryScheme[]>([])
-  useEffect(() => {
-    (async () => {
-      try {
-        const categoriesData = await fetchCategories();
-        setCategories(categoriesData);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [])
+
   return (
-    <div className='categories'>
-      <CategoriesHeader/>
-      <div className='categories-selector'>
-        {categories.map((category) => (
-          <CategoriesItem key={category.id} {...category} />
-        ))}
-      </div>
-    </div>
+<>
+</>
   )
 }

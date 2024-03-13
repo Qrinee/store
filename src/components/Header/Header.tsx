@@ -5,13 +5,16 @@ import store from '../../assets/shop.png'
 import user from '../../assets/user.png'
 import cart from '../../assets/cart.png'
 import { usePageContext } from '../../context/PageContext'
+import { Link } from 'react-router-dom'
 export default function Header() {
   const { setPageNumber } = usePageContext();
   return (
     <header className='header'>
         <div className='navigation-container'>
           <div className='navigation-button' onClick={() => setPageNumber(1)}>
-            <NavigationButton text={"LOGO"} isBold number={0} />
+            <Link to={'/'}>
+              <NavigationButton text={"LOGO"} isBold number={0} />
+            </Link>
           </div>
           <div className='navigation-button' onClick={() => setPageNumber(1)}>
             <NavigationButton text={"Home"} image={home} number={1} />

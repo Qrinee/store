@@ -112,6 +112,12 @@
     .product{
         width: 100%;
     }
+    .image-overlay{
+        width: calc(100% - 12px);
+    }
+    .circles-overlay{
+        width: 100%;
+    }
 }
 
 @keyframes product{

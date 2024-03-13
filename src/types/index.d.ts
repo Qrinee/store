@@ -7,7 +7,10 @@ interface ProductScheme {
     title: string,
     price: number,
     description: string,
-    images: any
+    images: any,
+    category: {
+        name: string
+    }
 }
 
 interface CartItem {
