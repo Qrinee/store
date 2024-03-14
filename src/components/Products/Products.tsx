@@ -12,6 +12,7 @@ export default function Products() {
   const [products, setProducts] = useState<ProductScheme[]>([]);
   const [categories, setCategories] = useState<CategoryScheme[]>([])
   const [selectedCategorie, setSelectedCategorie] = useState<number>(0)
+  
   useEffect(() => {
     (async () => {
       try {
@@ -22,6 +23,7 @@ export default function Products() {
       }
     })();
   }, [])
+
   useEffect(() => {
     (async () => {
       try {
@@ -48,11 +50,11 @@ export default function Products() {
     <div className="products">
       { products.map((product) => (
         <>
-        {
-          categories[selectedCategorie].name == product.category.name ? (
-            <Product key={product.id} {...product} />
-          ) : null
-        }
+          {
+            categories[selectedCategorie].name == product.category.name ? (
+              <Product key={product.id} {...product} />
+            ) : null
+          }
         </>
       ))} 
     </div>

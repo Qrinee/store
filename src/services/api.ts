@@ -12,9 +12,6 @@ export async function fetchProductsById(id:number) : Promise<ProductScheme> {
     return products
 }
 
-
-
-
 export async function fetchCategories() : Promise<CategoryScheme[]> {
     const response = await fetch(import.meta.env.VITE_URL + '/api/v1/categories')
     const categories = await response.json()
