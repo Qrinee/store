@@ -3,14 +3,14 @@ import { fetchProductsById } from "../../services/api";
 import './ProductView.css'
 import { ProductScheme } from "../../types";
 import { CartButton } from "../Products/CartButton/CartButton";
+import { useParams } from "react-router-dom";
 
 export default function ProductView() {
     const [product, setProduct] = useState<ProductScheme | null>(null);
     const [selected, setSelected] = useState<number>(0)
-    const urlParams = new URLSearchParams(window.location.search);
-    const idString = urlParams.get('id');
-    const id = idString ? parseInt(idString) : null;
-
+    // Id wyciągam sobie z path parametru za pomocą hooka useParams
+    const params = useParams();
+    const id = Number(params.id)
 
     useEffect(() => {
       if (id !== null) {

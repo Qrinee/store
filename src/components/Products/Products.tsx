@@ -51,7 +51,7 @@ export default function Products() {
       { products.map((product) => (
         <>
           {
-            categories[selectedCategorie].name == product.category.name ? (
+            categories[selectedCategorie]?.name == product.category?.name ? (
               <Product key={product.id} {...product} />
             ) : null
           }

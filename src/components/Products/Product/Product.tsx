@@ -3,6 +3,7 @@ import { CartButton } from '../CartButton/CartButton';
 import { ProductScheme } from '../../../types';
 import './Product.css';
 import tab from '../../../assets/tab.png';
+import { Link } from 'react-router-dom';
 
 export default function Product({ title, price, description, images, id }: ProductScheme) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -58,9 +59,10 @@ export default function Product({ title, price, description, images, id }: Produ
         <div className='product-bottom'>
           <div className='price'>{price}$</div>
           <div className='button-container'>
-          <a href={'/product?id=' + id}>
+            {/* Zamiast a daję link do products z id jako path param */}
+            <Link to={`/products/${id}`}>
               <img className='tab-button' src={tab} width={20} />
-            </a>
+            </Link>
             <CartButton id={id} />
           </div>
         </div>
