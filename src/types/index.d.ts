@@ -1,5 +1,5 @@
 interface LogoProps {logo: string;}
-interface NavigationButtonProps { text: string; isBold?: boolean; image?: string; number: number; }
+interface NavigationButtonProps { text: string; isBold?: boolean; image?: string; active?: boolean}
 interface CategoriesProps { selected? : boolean; text: string}
 
 interface ProductScheme {
