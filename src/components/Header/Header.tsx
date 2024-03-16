@@ -1,34 +1,40 @@
-import './Header.css'
-import NavigationButton from './NavigationButton/NavigationButton'
-import home from '../../assets/home.png'
-import store from '../../assets/shop.png'
-import user from '../../assets/user.png'
-import cart from '../../assets/cart.png'
-import { usePageContext } from '../../context/PageContext'
-import { Link } from 'react-router-dom'
+import "./Header.css";
+import NavigationButton from "./NavigationButton/NavigationButton";
+import home from "../../assets/home.png";
+import store from "../../assets/shop.png";
+import user from "../../assets/user.png";
+import cart from "../../assets/cart.png";
+import { Link, NavLink } from "react-router-dom";
+
+const navigationLinks = [
+  { path: "/", text: "Home", image: home },
+  { path: "/store", text: "Store", image: store },
+  { path: "/cart", text: "Cart", image: cart },
+  { path: "/user", text: "User", image: user },
+];
+
 export default function Header() {
-  const { setPageNumber } = usePageContext();
   return (
-    <header className='header'>
-        <div className='navigation-container'>
-          <div className='navigation-button' onClick={() => setPageNumber(1)}>
-            <Link to={'/'}>
-              <NavigationButton text={"LOGO"} isBold number={0} />
-            </Link>
-          </div>
-          <div className='navigation-button' onClick={() => setPageNumber(1)}>
-            <NavigationButton text={"Home"} image={home} number={1} />
-          </div>
-          <div className='navigation-button' onClick={() => setPageNumber(2)}>
-            <NavigationButton text={"Store"} image={store} number={2} />
-          </div>
-          <div className='navigation-button' onClick={() => setPageNumber(3)}>
-            <NavigationButton text={"Cart"} image={cart} number={3} />
-          </div>
-          <div className='navigation-button' onClick={() => setPageNumber(4)}>
-            <NavigationButton text={"User"} image={user} number={4} />
-          </div>
-        </div>
+    <header className="header">
+      <div className="navigation-container">
+        <Link to={"/"} className="navigation-button">
+          <NavigationButton text={"LOGO"} isBold />
+        </Link>
+        {/* Tutaj też kontekst staje się niepotrzebny, to z routera wyciągam czy route jest aktywny i dopisuję odpowiednią klasę */}
+        {/* Poza tym żeby ułatwić sobie życie link mogę generować na podstawie obiektu, wtedy nie muszę powtarzać i ewentualnie zmieniać kodu dla każdego linku */}
+        {navigationLinks.map((link, index) => (
+          <NavLink to={link.path} className="navigation-button">
+            {({ isActive }) => (
+              <NavigationButton
+                text={link.text}
+                image={link.image}
+                key={index}
+                active={isActive}
+              />
+            )}
+          </NavLink>
+        ))}
+      </div>
     </header>
-  )
+  );
 }
